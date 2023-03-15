@@ -1,0 +1,1 @@
+    {"message":"Invalid request parameters","errors":{"fixtureId":["The fixture id must be an integer."]}}
