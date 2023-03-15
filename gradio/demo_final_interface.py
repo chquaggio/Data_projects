@@ -37,7 +37,13 @@ def reader(pos_prompts, neg_prompts, num_outputs, prompt_strength, num_inference
 #definitionof the interface
 demo = gr.Interface(
     fn=reader,
-    inputs=[gr.Textbox(lines=2, placeholder="Enter your positive prompts here (comma separated)"), gr.Textbox(lines=2, placeholder="Enter your negative prompts here (comma separated)"), gr.Slider(1, 8, step=1), gr.Slider(0, 1, step=0.05), gr.Slider(1, 500), gr.Slider(1, 20),"image"],
+    inputs=[gr.Textbox(lines=2, placeholder="Enter your positive prompts here (comma separated)"), 
+            gr.Textbox(lines=2, placeholder="Enter your negative prompts here (comma separated)"), 
+            gr.Slider(1, 8, step=1), 
+            gr.Slider(0, 1, step=0.05), 
+            gr.Slider(1, 500), 
+            gr.Slider(1, 20),
+            "image"],
     outputs=[gr.Gallery(label="Generated images", show_label=True).style(grid=[2], height="auto")],
     )
 demo.launch(server_name="0.0.0.0")
