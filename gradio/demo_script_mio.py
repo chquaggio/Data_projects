@@ -1,5 +1,10 @@
 import gradio as gr
 
+#insert your stable diffusion model here
+def gen(image):
+    return image
+
+#function to read inputs, manipulate them and deliver outputs
 def naive_reader(pos_prompts, neg_prompts, check_param, slide_param, image):
     pp = pos_prompts.split(',')
     np = neg_prompts.split(',')
@@ -7,8 +12,9 @@ def naive_reader(pos_prompts, neg_prompts, check_param, slide_param, image):
     list_np = "First two negative prompts:{}, {}".format(np[0], np[1])
     cp = "check_param is {}".format(check_param)
     sp = "slide_param is {}".format(slide_param)
-    return list_p, list_np, cp, sp, image
+    return list_p, list_np, cp, sp, gen(image)
 
+#definitionof the interface
 demo = gr.Interface(
     fn=naive_reader,
     inputs=[gr.Textbox(lines=2, placeholder="Enter your positive prompts here (comma separated)"), gr.Textbox(lines=2, placeholder="Enter your negative prompts here (comma separated)"), "checkbox", gr.Slider(0, 100), "image"],
