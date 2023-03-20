@@ -46,5 +46,5 @@ demo = gr.Interface(
             "image"],
     outputs=[gr.Gallery(label="Generated images", show_label=True).style(grid=[2], height="auto")],
     )
-demo.launch(server_name="0.0.0.0")
+demo.launch(share=True, server_name="0.0.0.0")
 
