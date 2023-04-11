@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read the API key from file
-API_KEY=$(cat /home/christian/key.txt)
+API_KEY=$(cat key.txt)
 
 # Define the endpoint and parameters
 ENDPOINT="teams"
